@@ -7,7 +7,18 @@ pipeline {
           // Get some code from a GitHub repository
           git branch: 'main', url: 'https://github.com/MartinFlower21/lbg-vat-calculator.git'
         }
+    }    
+    stage('Install') {
+        steps {
+            // Install the ReactJS dependencies
+            sh "npm install"
+        }
     }
+    stage('Test') {
+        steps {
+          // Run the ReactJS tests
+          sh "npm test"
+        }
     stage('SonarQube Analysis') {
       environment {
         scannerHome = tool 'sonarqube'
