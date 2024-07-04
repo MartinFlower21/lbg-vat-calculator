@@ -1,6 +1,6 @@
 pipeline{
  environment {
- registry = "folorin/vatcal"
+ registry = "folorin/webcalc"
         registryCredentials = "dockerhub_id"
         dockerImage = ""
     }
